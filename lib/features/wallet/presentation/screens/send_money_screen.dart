@@ -204,9 +204,9 @@ class SendMoneyScreenContent extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) => PaymentSuccessScreen(
-                                amount: provider.amount,
-                                recipientName:
-                                    'Daniel', // Using the selected contact name
+                                amount: double.parse(
+                                    provider.amount.replaceAll(',', '')),
+                                recipientName: 'Daniel',
                               ),
                             ),
                           );

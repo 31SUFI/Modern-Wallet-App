@@ -3,9 +3,11 @@ import '../../../../core/theme/app_colors.dart';
 import 'package:lottie/lottie.dart';
 import '../../../../core/animations/animated_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import '../providers/wallet_provider.dart';
 
 class PaymentSuccessScreen extends StatelessWidget {
-  final String amount;
+  final double amount;
   final String recipientName;
 
   const PaymentSuccessScreen({
@@ -16,6 +18,11 @@ class PaymentSuccessScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Deduct the amount when the screen is built
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<WalletProvider>().deductAmount(amount);
+    });
+
     final size = MediaQuery.of(context).size;
 
     return AnimatedPage(
