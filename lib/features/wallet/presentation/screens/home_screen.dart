@@ -39,53 +39,64 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         body: SafeArea(
           child: SingleChildScrollView(
-            padding: EdgeInsets.all(size.width * 0.04), // Responsive padding
+            padding: EdgeInsets.fromLTRB(
+              size.width * 0.04,
+              size.height * 0.02,
+              size.width * 0.04,
+              size.width * 0.04,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Header Section
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Good Morning!',
-                          style: TextStyle(
-                            color: Colors.grey[600],
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                Padding(
+                  padding: EdgeInsets.only(top: size.height * 0.03),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Good Morning! 🌅',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(
+                                  color: Colors.grey[600],
+                                ),
                           ),
-                        ),
-                        const Text(
-                          'Sajibur Rahman',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: -0.5,
+                          const SizedBox(height: 4),
+                          Text(
+                            'Muhammad Sufiyan',
+                            style: Theme.of(context).textTheme.titleMedium,
                           ),
-                        ),
-                      ],
-                    ),
-                    Stack(
-                      children: [
-                        const Icon(Icons.notifications_outlined),
-                        Positioned(
-                          right: 0,
-                          top: 0,
-                          child: Container(
-                            width: 8,
-                            height: 8,
-                            decoration: const BoxDecoration(
-                              color: AppColors.primary,
-                              shape: BoxShape.circle,
+                        ],
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        child: Stack(
+                          children: [
+                            const Icon(
+                              Icons.notifications_outlined,
+                              size: 28,
                             ),
-                          ),
+                            Positioned(
+                              right: 2,
+                              top: 2,
+                              child: Container(
+                                width: 8,
+                                height: 8,
+                                decoration: const BoxDecoration(
+                                  color: AppColors.primary,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
 
                 SizedBox(height: size.height * 0.03),
@@ -216,12 +227,12 @@ class HomeScreen extends StatelessWidget {
                 ),
 
                 TransactionItem(
-                  title: 'Dribbble',
+                  title: 'Binance',
                   subtitle: 'Purchase',
                   amount: '89.00',
                   time: '9:34 PM',
                   icon: Image.network(
-                      'https://cdn.dribbble.com/assets/dribbble-ball-mark-ea73545ccb83d575f9c0bc5f11a6937f2dd05159e3a768c0d5e6466aca2e0a7c.svg'),
+                      'https://public.bnbstatic.com/20190405/eb2349c3-b2f8-4a93-a286-8f86a62ea9d8.png'),
                   isPositive: false,
                 ),
               ],
