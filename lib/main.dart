@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wallet_app/features/wallet/presentation/screens/home_screen.dart';
+import 'core/theme/app_theme.dart';
+import 'features/wallet/presentation/screens/home_screen.dart';
 import 'package:wallet_app/features/wallet/presentation/screens/send_money_screen.dart';
 
 void main() {
@@ -15,9 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Modern Wallet App',
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
+      theme: AppTheme.lightTheme,
       home: const HomeScreen(),
     );
   }
