@@ -11,7 +11,7 @@ mixin SlideAnimation<T extends StatefulWidget>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 500), // Slightly faster animation
+      duration: const Duration(milliseconds: 600), // Slightly faster animation
     );
 
     _fadeAnimation = Tween<double>(

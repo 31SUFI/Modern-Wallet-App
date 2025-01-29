@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
 import 'package:lottie/lottie.dart';
 import '../../../../core/animations/animated_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PaymentSuccessScreen extends StatelessWidget {
   final String amount;
@@ -42,9 +43,9 @@ class PaymentSuccessScreen extends StatelessWidget {
                 SizedBox(height: size.height * 0.04),
 
                 // Success Text
-                const Text(
+                Text(
                   'Payment Successful!',
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
                     color: Colors.black87,
@@ -55,7 +56,7 @@ class PaymentSuccessScreen extends StatelessWidget {
                 // Amount
                 Text(
                   '\$$amount',
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: 40,
                     fontWeight: FontWeight.w700,
                     color: AppColors.primary,
@@ -67,7 +68,7 @@ class PaymentSuccessScreen extends StatelessWidget {
                 // Recipient info
                 Text(
                   'has been sent to',
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: 16,
                     color: Colors.grey[600],
                   ),
@@ -75,7 +76,7 @@ class PaymentSuccessScreen extends StatelessWidget {
                 SizedBox(height: size.height * 0.01),
                 Text(
                   recipientName,
-                  style: const TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
                     color: Colors.black87,
@@ -99,9 +100,9 @@ class PaymentSuccessScreen extends StatelessWidget {
                     ),
                     elevation: 0,
                   ),
-                  child: const Text(
+                  child: Text(
                     'Done',
-                    style: TextStyle(
+                    style: GoogleFonts.poppins(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                       color: Colors.black87,
