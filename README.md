@@ -2,7 +2,7 @@
 A sleek Flutter mobile wallet application with a modern UI, smooth animations, and comprehensive money transfer functionality.
 
 ## App Demo 🎥
-[Watch the Demo Video on Google Drive]
+[Watch the Demo Video on Google Drive](https://drive.google.com/file/d/112CYRIyrhyY_RmF2BhMH1sNQ0Z9c7Y-9/view?usp=drivesdk)
 
 ## Features ✨
 
@@ -82,7 +82,8 @@ flutter run
 ```
 
 ## Screenshots 📸
-[Add your app screenshots here]
+![image](https://github.com/user-attachments/assets/4b88755d-424f-48ec-8008-0eaeb57e49e0)
+
 
 ## Dependencies 🧩
 Add these to your `pubspec.yaml`:
