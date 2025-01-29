@@ -12,18 +12,18 @@ class HomeScreen extends StatelessWidget {
   List<CardModel> get cards => [
         CardModel(
           cardNumber: '1234 5678 9012 3456',
-          cardHolderName: 'John Doe',
-          expiryDate: '12/24',
+          cardHolderName: 'M. Sufiyan',
+          expiryDate: '12/25',
           balance: '60,890.67',
-          cardType: 'Mastercard',
+          cardType: 'PayPal',
           cardTypeIcon:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png',
+              'https://www.paypalobjects.com/webstatic/icon/pp258.png',
         ),
         CardModel(
           cardNumber: '9876 5432 1098 7654',
-          cardHolderName: 'John Doe',
+          cardHolderName: 'M. Sufiyan',
           expiryDate: '09/25',
-          balance: '12,450.00',
+          balance: '6,433.11',
           cardType: 'Visa',
           cardTypeIcon:
               'https://cdn.visa.com/v2/assets/images/logos/visa/blue/logo.png',
@@ -169,31 +169,26 @@ class HomeScreen extends StatelessWidget {
 
               SizedBox(
                 height: 220,
-                child: ListView(
+                child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(vertical: 10),
-                  children: [
-                    CardItem(
-                      backgroundColor: const Color(0xFF1E1E99),
-                      cardNumber: '**** **** **** 1234',
-                      cardHolderName: 'M. Sufiyan',
-                      expiryDate: '12/24',
+                  itemCount: cards.length,
+                  itemBuilder: (context, index) {
+                    final card = cards[index];
+                    return CardItem(
+                      backgroundColor: index == 0
+                          ? const Color(0xFF1E1E99)
+                          : const Color(0xFFFF2E63),
+                      cardNumber:
+                          '**** **** **** ${card.cardNumber.substring(card.cardNumber.length - 4)}',
+                      cardHolderName: card.cardHolderName,
+                      expiryDate: card.expiryDate,
                       cardTypeIcon: Image.network(
-                        'https://www.paypalobjects.com/webstatic/icon/pp258.png',
+                        card.cardTypeIcon,
                         color: Colors.white,
                       ),
-                    ),
-                    CardItem(
-                      backgroundColor: const Color(0xFFFF2E63),
-                      cardNumber: '**** **** **** 5678',
-                      cardHolderName: 'M. Sufiyan',
-                      expiryDate: '09/25',
-                      cardTypeIcon: Image.network(
-                        'https://cdn.visa.com/v2/assets/images/logos/visa/blue/logo.png',
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
+                    );
+                  },
                 ),
               ),
 
